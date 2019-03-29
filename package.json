@@ -1,0 +1,25 @@
+{
+  "name": "stellar",
+  "version": "1.0.0",
+  "description": "Fun with StellarSdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run unit",
+    "lint": "standard",
+    "lintFix": "standard --fix",
+    "unit": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": ".git"
+  },
+  "keywords": [
+    "stellar-sdk"
+  ],
+  "author": "Alec Missine",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.3.0",
+    "stellar-sdk": "^0.15.0"
+  }
+}
