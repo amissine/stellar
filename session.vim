@@ -17,18 +17,12 @@ argglobal
 silent! argdel *
 $argadd package.json
 set stal=2
-edit index.js
+edit package.json
 set splitbelow splitright
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 22 + 24) / 48)
-exe '2resize ' . ((&lines * 22 + 24) / 48)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -39,35 +33,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 11) / 22)
+let s:l = 1 - ((0 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
-lcd ~/project/stellar
-wincmd w
-argglobal
-edit ~/project/stellar/package.json
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 11) / 22)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-wincmd w
-exe '1resize ' . ((&lines * 22 + 24) / 48)
-exe '2resize ' . ((&lines * 22 + 24) / 48)
-tabedit ~/project/stellar/index.js
+tabedit index.js
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -90,7 +62,7 @@ normal! zt
 88
 normal! 0
 lcd ~/project/stellar
-tabnext 2
+tabnext 1
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

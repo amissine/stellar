@@ -1,3 +1,22 @@
+/*
+ * Sending and receiving payments over Stellar Network by two processes, P1 and P2
+ *
+ * Usage example:
+ *
+ * P1.1. Create sender account 
+ * node index.js
+ * SBVIHNPL7JAUPMUGQHZMYHH3OG3UNHSR2SXIOT4PL3A6JRCDSZVHSM5V
+ *
+ * P2.1. Create receiver account
+ * node index.js
+ * SCMHOGFZ7KENJ7YC5LYHYBITWGLEAOM6FP77P5GP3L2IYFF32URXIBJA
+ *
+ * P2.2. Monitor payments
+ * node index.js SCMHOGFZ7KENJ7YC5LYHYBITWGLEAOM6FP77P5GP3L2IYFF32URXIBJA
+ *
+ * P1.2. Send XLM 100
+ * node index.js SBVIHNPL7JAUPMUGQHZMYHH3OG3UNHSR2SXIOT4PL3A6JRCDSZVHSM5V SCMHOGFZ7KENJ7YC5LYHYBITWGLEAOM6FP77P5GP3L2IYFF32URXIBJA 100
+ */
 const StellarSdk = require('stellar-sdk')
 const fetch = require('node-fetch')
 const pair = process.argv.length < 3 ? StellarSdk.Keypair.random()
